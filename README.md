@@ -8,6 +8,7 @@ This project focuses on predicting links (relationships or connections) in socia
 - [Features](#features)
 - [Installation and Setup](#installation-and-setup)
 - [File Descriptions](#file-descriptions)
+- [Featurization Techniques](#featurization-techniques)
 - [Usage Instructions](#usage-instructions)
 - [Acknowledgements](#acknowledgements)
 
@@ -48,6 +49,36 @@ The goal of this project is to predict whether a link (connection) exists betwee
 - **`FB_featurization.ipynb`**: Covers feature engineering, transforming raw data into formats suitable for machine learning models.
 - **`FB_Models.ipynb`**: Implements various machine learning models to predict social media links.
 - **`README.md`**: This documentation file.
+
+## Featurization Techniques
+To predict links effectively, various features were engineered to represent relationships between nodes (users) in the social network:
+
+1. **Node-Based Features**:
+   - **Degree Centrality**: Measures the number of connections a node has.
+   - **PageRank**: Quantifies the influence of a node in the network.
+   - **Clustering Coefficient**: Indicates the level of interconnectedness of a node's neighbors.
+
+2. **Pair-Based Features**:
+   - **Number of Mutual Connections**: Strongly correlates with link formation.
+   - **Jaccard Similarity**: Captures the overlap between neighbors of two nodes.
+   - **Adamic-Adar Index**: Highlights shared neighbors with fewer overall connections.
+
+3. **Graph-Based Embeddings**:
+   - **Node2Vec**: Generates low-dimensional representations of nodes based on graph walks.
+   - **Graph Neural Networks (GNNs)**: Produces embeddings by aggregating neighborhood information.
+
+4. **Attribute-Based Features**:
+   - **Cosine Similarity**: Measures similarity between user attributes.
+   - **Categorical Matches**: Detects common properties, such as shared location or interests.
+
+5. **Temporal Features**:
+   - **Interaction Frequency**: The number of interactions between nodes over time.
+   - **Time Since Last Interaction**: Captures temporal dynamics in relationships.
+
+6. **Hybrid Features**:
+   - Combines multiple feature types to provide a comprehensive representation of potential links.
+
+These features were selected and engineered to enhance the performance of machine learning models in predicting links.
 
 ## Usage Instructions
 1. Begin with `FB_EDA.ipynb` to understand the dataset and perform initial analysis.
